@@ -5,11 +5,11 @@
 
  ### 参考阅读
 
-[bitmap原理](https://yuyu888.github.io/posts/2020/12/28/bitmap%E5%8E%9F%E7%90%86.html){:target="_blank"}
+[bitmap原理](https://yuyu888.github.io/posts/2020/12/28/bitmap%E5%8E%9F%E7%90%86.html)
 
-[位运算](https://yuyu888.github.io/posts/2020/12/31/%E4%BD%8D%E8%BF%90%E7%AE%97.html){:target="_blank"}
+[位运算](https://yuyu888.github.io/posts/2020/12/31/%E4%BD%8D%E8%BF%90%E7%AE%97.html)
 
-[php多态计算](https://yuyu888.github.io/posts/2020/12/22/php%E5%A4%9A%E6%80%81%E8%AE%A1%E7%AE%97.html){:target="_blank"}
+[php多态计算](https://yuyu888.github.io/posts/2020/12/22/php%E5%A4%9A%E6%80%81%E8%AE%A1%E7%AE%97.html)
 
 ### example
 
