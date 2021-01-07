@@ -1,7 +1,10 @@
 
-# DataMultiplex 
+# datamultiplex 
 
  使用bitmap的原理，把多个属性存入到一个bit串（字段）中，减少存储并，方便扩展
+
+### Installation
+go get -u  github.com/yuyu888/golibs/datamultiplex
 
 ### DOC
 
@@ -15,7 +18,7 @@
 
 [php多态计算](https://yuyu888.github.io/posts/2020/12/22/php%E5%A4%9A%E6%80%81%E8%AE%A1%E7%AE%97.html)
 
-### example
+### Basic Usage
 
 ````go
 package main
