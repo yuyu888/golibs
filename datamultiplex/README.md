@@ -3,7 +3,11 @@
 
  使用bitmap的原理，把多个属性存入到一个bit串（字段）中，减少存储并，方便扩展
 
- ### 参考阅读
+### DOC
+
+[https://godoc.org/github.com/yuyu888/golibs/datamultiplex](https://godoc.org/github.com/yuyu888/golibs/datamultiplex)
+
+### 参考阅读
 
 [bitmap原理](https://yuyu888.github.io/posts/2020/12/28/bitmap%E5%8E%9F%E7%90%86.html)
 
