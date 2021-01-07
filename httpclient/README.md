@@ -81,3 +81,9 @@ httpcli := httpclient.NewRequest()
 	resp, _ := httpcli.Delete("http://127.0.0.1:8199/test?c=666")
 	fmt.Println(resp.Body)
 ````
+
+### License
+
+[MIT](https://opensource.org/licenses/MIT)
+
+Copyright (C) 2021 yuyu888

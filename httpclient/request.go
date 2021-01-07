@@ -103,7 +103,6 @@ func (r *Request) Post(url string, postData url.Values) (*Response, error) {
 func (r *Request) PostForm(url string, postData map[string]string) (*Response, error) {
 	r.Url = url
 	r.Method = "POST"
-	r.Headers["Content-Type"] = "application/x-www-form-urlencoded"
 	if postData != nil {
 		buf := new(bytes.Buffer)
 		writer := multipart.NewWriter(buf)

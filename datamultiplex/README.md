@@ -42,3 +42,9 @@ func main() {
 	fmt.Println(e)
 }
 ````
+
+### License
+
+[MIT](https://opensource.org/licenses/MIT)
+
+Copyright (C) 2021 yuyu888
