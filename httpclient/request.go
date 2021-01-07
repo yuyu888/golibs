@@ -3,7 +3,6 @@ package httpclient
 import (
 	"bytes"
 	"fmt"
-	"golibs/utils"
 	"io"
 	"mime/multipart"
 	"net"
@@ -11,6 +10,8 @@ import (
 	"net/url"
 	"strings"
 	"time"
+
+	"github.com/yuyu888/golibs/utils"
 )
 
 // Request构造类
