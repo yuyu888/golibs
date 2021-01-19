@@ -71,16 +71,19 @@ func (r *Request) SetBody(body io.Reader) *Request {
 	return r
 }
 
+// body 为字符串
 func (r *Request) SetStringPostdata(postData string) *Request {
 	r.Body = strings.NewReader(postData)
 	return r
 }
 
+// body为 二进制流
 func (r *Request) SetBytePostdata(postData []byte) *Request {
 	r.Body = bytes.NewReader(postData)
 	return r
 }
 
+// Get 请求
 func (r *Request) Get(url string) (*Response, error) {
 	r.Url = url
 	r.Method = "GET"
@@ -107,7 +110,7 @@ func (r *Request) PostForm(url string, postData map[string]string) (*Response, e
 		buf := new(bytes.Buffer)
 		writer := multipart.NewWriter(buf)
 		for k, v := range postData {
-			if k != "@upload_param_name" && k != "@upload_file_path" {
+			if k != "@upload_param_name" && k != "@upload_file_path" && k != "@upload_file_name" {
 				writer.WriteField(k, v)
 			}
 		}
@@ -115,11 +118,17 @@ func (r *Request) PostForm(url string, postData map[string]string) (*Response, e
 		_, ok1 := postData["@upload_param_name"]
 		_, ok2 := postData["@upload_file_path"]
 
+		filename := "tmpfile"
+		fn, ok3 := postData["@upload_file_name"]
+		if ok3 {
+			filename = fn
+		}
+
 		// 上传文件
 		if ok1 && ok2 {
 			fileData, err := utils.FileGetContents(postData["@upload_file_path"]) // 此处内容可以来自本地文件读取或远程文件
 			if err == nil {
-				part, err := writer.CreateFormFile(postData["@upload_param_name"], "tmpfile")
+				part, err := writer.CreateFormFile(postData["@upload_param_name"], filename)
 				if err != nil {
 					return nil, err
 				}
@@ -136,6 +145,7 @@ func (r *Request) PostForm(url string, postData map[string]string) (*Response, e
 	return r.Send()
 }
 
+// Put 请求
 func (r *Request) Put(url string, body string) (*Response, error) {
 	r.Url = url
 	r.Method = "PUT"
@@ -150,6 +160,7 @@ func (r *Request) Delete(url string) (*Response, error) {
 	return r.Send()
 }
 
+// 主方法
 func (r *Request) Send() (*Response, error) {
 
 	client := &http.Client{

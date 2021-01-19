@@ -16,10 +16,12 @@ func NewResponse() *Response {
 	return &Response{}
 }
 
+// 获取状态码
 func (r *Response) StatusCode() int {
 	return r.Raw.StatusCode
 }
 
+// 解析并设置响应头
 func (r *Response) parseHeaders() error {
 	headers := map[string]string{}
 	for k, v := range r.Raw.Header {
@@ -29,6 +31,7 @@ func (r *Response) parseHeaders() error {
 	return nil
 }
 
+// 解析并设置响应信息
 func (r *Response) parseBody() error {
 	defer func() {
 		if err := recover(); err != nil {
